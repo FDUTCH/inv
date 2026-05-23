@@ -1,14 +1,15 @@
 package inv
 
 import (
+	"sync/atomic"
+
 	"github.com/bedrock-gophers/intercept/intercept"
-	"github.com/bedrock-gophers/unsafe/unsafe"
+	"github.com/bedrock-gophers/unsafe"
 	"github.com/df-mc/dragonfly/server/player"
 	"github.com/df-mc/dragonfly/server/session"
 	"github.com/df-mc/dragonfly/server/world"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
-	"sync/atomic"
 )
 
 func init() {

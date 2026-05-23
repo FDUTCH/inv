@@ -7,17 +7,11 @@ import (
 	"github.com/df-mc/dragonfly/server/item"
 	"github.com/df-mc/dragonfly/server/item/inventory"
 	"github.com/df-mc/dragonfly/server/world"
-	"math"
 )
 
-func init() {
+func RegisterBlocks(w world.BlockRegistry) {
 	for _, b := range []world.Block{dropper{}} {
-		if bl, ok := world.BlockByName(b.EncodeBlock()); ok {
-			hash, _ := bl.Hash()
-			if hash == math.MaxUint64 {
-				world.RegisterBlock(b)
-			}
-		}
+		w.RegisterBlock(b)
 	}
 }
 
