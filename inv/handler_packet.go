@@ -26,7 +26,7 @@ func (h packetHandler) HandleClientPacket(ctx *intercept.Context, pk packet.Pack
 	}
 
 	ha, _ := ctx.Val().Handle()
-	ha.ExecWorld(func(tx *world.Tx, e world.Entity) {
+	ha.Do(func(tx *world.Tx, e world.Entity) {
 		p := e.(*player.Player)
 		s := unsafe.Session(p)
 		switch pkt := pk.(type) {
